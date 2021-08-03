@@ -1,15 +1,43 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
+	{#<video id="video1" preload="" autoplay="" muted="" playsinline="" loop="">
+								<source src="{{ video }}" type="video/mp4">
+							</video>#}
 	<div class="main-wrapper">
 		<img src="{{ profile_image }}" class="avatar" alt="" \>
-		<h1>{{name}}</h1>
-		<p>Welcome to
-			{{title}}</p>
+		<h2>{{title}}</h2>
+		<p>
+			Hello and welcome to my personal portfolio page.
+																											      My name is
+			{{ name }}
+			and i am currently studying Coputer science in Media at Hochschule Furtwangen in Germany.
+
+
+		</p>
 
 		<a class="social-links" href='{{ links["github"] }}' target="_blank">
 			<i class="icon-github">
 				Github</i>
 		</a>
+		|
+		<a class="social-links" href='{{ links["twitter"] }}' target="_blank">
+			<i class="icon-twitter">
+				Twitter</i>
+		</a>
 	</div>
+
+	<div class="projects-wrapper">
+		{% for project in projects.data %}
+
+			<div class="project">
+				<img src=" {{ project.image }}" alt="" \>
+        <p>{{ project.name }}</p>
+
+			</div>
+
+		{% endfor %}
+
+	</div>
+
 {% endblock %}
