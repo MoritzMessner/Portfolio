@@ -1,6 +1,15 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
+	<div class="main-wrapper">
+		<img src="{{ profile_image }}" class="avatar" alt="" \>
+		<h1>{{name}}</h1>
+		<p>Welcome to
+			{{title}}</p>
+
+		<a class="social-links" href='{{ links["github"] }}' target="_blank">
+			<i class="icon-github">
+				Github</i>
+		</a>
+	</div>
 {% endblock %}
